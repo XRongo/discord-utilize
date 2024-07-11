@@ -2,7 +2,7 @@
  * CrashBlocker module provides error handling and notification functionalities for Discord.js applications.
  * It integrates with advanced-logs for enhanced logging capabilities.
  */
-import { Client, WebhookClient } from "discord.js";
+import { Client, codeBlock, EmbedBuilder, WebhookClient } from "discord.js";
 import type { CrashBlockerOptions } from "../types";
 import * as console from "../helpers/log";
 
@@ -87,7 +87,7 @@ export class CrashBlocker {
         });
 
         process.on("unhandledRejection", (error) => {
-            this.handleProcessError("Unhandled Rejection", error);
+            this.handleProcessError("Unhandled Rejection", error as Error);
         });
 
         if (this.client) {
@@ -107,7 +107,7 @@ export class CrashBlocker {
      * @param {string} type - Type of error (e.g., "Uncaught Exception", "Unhandled Rejection").
      * @param {Error | unknown} error - The error object.
      */
-    private handleProcessError(type: string, error: Error | unknown) {
+    private handleProcessError(type: string, error: Error) {
         if (!this.hidden) {
             if (this.errorStack) {
                 console.error(error);
@@ -117,7 +117,23 @@ export class CrashBlocker {
         }
 
         if (this.webhook) {
-            this.webhook.send({ content: `${type}: ${error}` });
+            const embed = new EmbedBuilder()
+                .setTitle(`${type}`)
+                .setColor("Red")
+                .addFields({
+                    name: "Error",
+                    value: `${codeBlock(`${error}`)}`,
+                });
+            if (this.errorStack) {
+                if (error.stack) {
+                    const errorStack = error.stack.slice(0, 1000);
+                    embed.addFields({
+                        name: "Stack",
+                        value: `${codeBlock(`${errorStack}`)}`,
+                    });
+                }
+            }
+            this.webhook.send({ embeds: [embed] });
         }
     }
 
@@ -136,9 +152,25 @@ export class CrashBlocker {
         }
 
         if (this.webhook) {
-            this.webhook.send({
-                content: `Discord Error: ${error}`,
-            });
+            const embed = new EmbedBuilder()
+                .setTitle("Discord Error")
+                .setColor("Red")
+                .addFields({
+                    name: "Error",
+                    value: `${codeBlock(`${error}`)}`,
+                    inline: false,
+                });
+            if (this.errorStack) {
+                if (error.stack) {
+                    const errorStack = error.stack.slice(0, 1000);
+                    embed.addFields({
+                        name: "Stack",
+                        value: `${codeBlock(`${errorStack}`)}`,
+                        inline: false,
+                    });
+                }
+            }
+            this.webhook.send({ embeds: [embed] });
         }
     }
 }
