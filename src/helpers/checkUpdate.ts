@@ -3,7 +3,7 @@ import { version as currentVersion } from "../../package.json";
 import * as console from "./log";
 
 export default function checkForUpdates() {
-    const packageName = "discord-utils";
+    const packageName = "discord-utilize";
 
     https
         .get(`https://registry.npmjs.org/${packageName}/latest`, (res) => {
