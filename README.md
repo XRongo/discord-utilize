@@ -3,8 +3,8 @@
 
 ## 🏅 Usages
 ```js
-const { CrashBlocker, newEmbed, EmbedStyle } = require("discord-utilize");
-/* import { CrashBlocker, newEmbed, EmbedStyle } from "discord-utilize"; */
+const { CrashBlocker, newEmbed, EmbedStyle, EmbedLanguage } = require("discord-utilize");
+/* import { CrashBlocker, newEmbed, EmbedStyle, EmbedLanguage } from "discord-utilize"; */
 const { Client } = require("discord.js")
 /* import { Client } from "discord.js"; */
 
