@@ -12,7 +12,13 @@ const client = new Client({ intents: [] })
 
 new CrashBlocker().init() // Your application will never crash.
 
-const embed = newEmbed(client, EmbedStyle.Default) // Returns EmbedBuilder but it has title and color.
+const defaultEmbedTurkish = newEmbed(client, EmbedStyle.Default) // Returns EmbedBuilder but it has title and color.
+const successEmbedTurkish = newEmbed(client, EmbedStyle.Default) // Returns EmbedBuilder but it has title and color.
+const errorEmbedTurkish = newEmbed(client, EmbedStyle.Default) // Returns EmbedBuilder but it has title and color.
+
+const defaultEmbedEnglish = newEmbed(client, EmbedStyle.Default, EmbedLanguage.English) // Returns EmbedBuilder but it has title and color.
+const successEmbedEnglish = newEmbed(client, EmbedStyle.Default, EmbedLanguage.English) // Returns EmbedBuilder but it has title and color.
+const errorEmbedEnglish = newEmbed(client, EmbedStyle.Default, EmbedLanguage.English) // Returns EmbedBuilder but it has title and color.
 ```
 
 ## 🐞 I found a bug!

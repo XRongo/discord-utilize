@@ -18,7 +18,7 @@ export default function checkForUpdates() {
                 if (!latestVersion) return;
                 if (currentVersion !== latestVersion) {
                     console.info(
-                        `A new version of ${packageName} is available! (${latestVersion})`,
+                        `A new version of ${packageName} is available! (${latestVersion}) Please update your package by running \`npm i ${packageName}@latest\` or \`yarn add ${packageName}@latest\``,
                     );
                 }
             });
