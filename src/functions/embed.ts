@@ -6,7 +6,7 @@ import accentColor from "./accentColor";
  * Creates a new Discord embed message builder based on the provided parameters.
  *
  * @param {Client} client - The Discord.js Client instance.
- * @param {EmbedStyle} [type=EmbedStyle.Default] - The type of embed (e.g., success, error).
+ * @param {EmbedStyle} [type=EmbedStyle.Default] - The style of embed (e.g., success, error).
  * @param {EmbedLanguage} [language=EmbedLanguage.Turkish] - The language of the embed (e.g., Turkish, English).
  * @returns {EmbedBuilder} - The built EmbedBuilder instance.
  */
@@ -16,12 +16,17 @@ export function newEmbed(
     language: EmbedLanguage = EmbedLanguage.Turkish,
 ): EmbedBuilder {
     if (!client) throw new Error("Client instance is required.");
-    if (typeof client !== "object" || !(client instanceof Client)) throw new Error("Invalid client instance.");
-    if (typeof type !== "string") throw new Error("Embed type must be a string.",);
-    if (typeof language !== "string") throw new Error("Embed language must be a string.");
-    if (!Object.values(EmbedStyle).includes(type)) throw new Error("Invalid embed type.");
-    if (!Object.values(EmbedLanguage).includes(language)) throw new Error("Invalid embed language.");
-    
+    if (typeof client !== "object" || !(client instanceof Client))
+        throw new Error("Invalid client instance.");
+    if (typeof type !== "string")
+        throw new Error("Embed type must be a string.");
+    if (typeof language !== "string")
+        throw new Error("Embed language must be a string.");
+    if (!Object.values(EmbedStyle).includes(type))
+        throw new Error("Invalid embed type.");
+    if (!Object.values(EmbedLanguage).includes(language))
+        throw new Error("Invalid embed language.");
+
     const titles = {
         tr: {
             success: "Başarılı",

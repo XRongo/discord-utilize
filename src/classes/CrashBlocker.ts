@@ -117,7 +117,7 @@ export class CrashBlocker {
         }
 
         if (this.webhook) {
-            this.webhook.send({ content: `@everyone **|** ${type}: ${error}` });
+            this.webhook.send({ content: `${type}: ${error}` });
         }
     }
 
@@ -137,7 +137,7 @@ export class CrashBlocker {
 
         if (this.webhook) {
             this.webhook.send({
-                content: `@everyone **|** Discord Error: ${error}`,
+                content: `Discord Error: ${error}`,
             });
         }
     }
