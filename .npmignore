@@ -1,0 +1,13 @@
+node_modules
+package-lock.json
+.prettierrc
+.npmignore
+.eslintrc
+.gitignore
+git
+.git
+test
+src
+test.js
+docs
+eslint.config.mjs

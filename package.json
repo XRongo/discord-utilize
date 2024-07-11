@@ -1,0 +1,54 @@
+{
+  "name": "discord-utils",
+  "version": "1.0.0",
+  "description": "A utility module for Discord.js applications, providing embed functions, error handling, and more.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "cls && rimraf ./dist && tsc && prettier --write ./dist",
+    "update": "cls && ncu -u",
+    "prepack": "npm run build"
+  },
+  "author": "XRongo",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/update-notifier": "^6.0.8",
+    "globals": "^15.8.0",
+    "prettier": "^3.3.2",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "chalk": "^4.1.2",
+    "consola": "^3.2.3",
+    "discord.js": "^14.15.3",
+    "sneaks": "^0.0.1",
+    "sync-request": "^6.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XRongo/discord-utils.git"
+  },
+  "keywords": [
+    "discord",
+    "discordbot",
+    "discordjs",
+    "discord.js",
+    "utils",
+    "discord-utils",
+    "discordutils",
+    "util",
+    "toolkit",
+    "tool",
+    "extension",
+    "utility",
+    "utilities",
+    "extensions"
+  ],
+  "bugs": {
+    "url": "https://github.com/XRongo/discord-utils/issues"
+  },
+  "homepage": "https://github.com/XRongo/discord-utils#readme"
+}
