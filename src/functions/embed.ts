@@ -15,6 +15,13 @@ export function newEmbed(
     type: EmbedStyle = EmbedStyle.Default,
     language: EmbedLanguage = EmbedLanguage.Turkish,
 ): EmbedBuilder {
+    if (!client) throw new Error("Client instance is required.");
+    if (typeof client !== "object" || !(client instanceof Client)) throw new Error("Invalid client instance.");
+    if (typeof type !== "string") throw new Error("Embed type must be a string.",);
+    if (typeof language !== "string") throw new Error("Embed language must be a string.");
+    if (!Object.values(EmbedStyle).includes(type)) throw new Error("Invalid embed type.");
+    if (!Object.values(EmbedLanguage).includes(language)) throw new Error("Invalid embed language.");
+    
     const titles = {
         tr: {
             success: "Başarılı",

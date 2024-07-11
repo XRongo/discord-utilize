@@ -37,6 +37,38 @@ export class CrashBlocker {
      * @param {Client} [CrashBlockerOptions.client=undefined] - Discord.js client instance to handle Discord-specific errors.
      */
     constructor(CrashBlockerOptions: CrashBlockerOptions) {
+        if (CrashBlockerOptions) {
+            if (
+                CrashBlockerOptions.hidden &&
+                typeof CrashBlockerOptions.hidden !== "boolean"
+            ) {
+                throw new Error(
+                    "CrashBlocker option 'hidden' must be a boolean.",
+                );
+            }
+            if (
+                CrashBlockerOptions.errorStack &&
+                typeof CrashBlockerOptions.errorStack !== "boolean"
+            ) {
+                throw new Error(
+                    "CrashBlocker option 'errorStack' must be a boolean.",
+                );
+            }
+            if (
+                CrashBlockerOptions.webhook &&
+                typeof CrashBlockerOptions.webhook !== "object"
+            ) {
+                throw new Error(
+                    "CrashBlocker option 'webhook' must be a object.",
+                );
+            }
+            if (
+                CrashBlockerOptions.client &&
+                (typeof CrashBlockerOptions.client !== "object" ||
+                    !(CrashBlockerOptions.client instanceof Client))
+            )
+                throw new Error("Invalid client instance.");
+        }
         this.hidden = CrashBlockerOptions.hidden ?? false;
         this.errorStack = CrashBlockerOptions.errorStack ?? false;
         this.webhook = CrashBlockerOptions.webhook
