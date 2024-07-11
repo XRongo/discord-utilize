@@ -31,12 +31,12 @@ export function newEmbed(
         tr: {
             success: "Başarılı",
             error: "Hata",
-            default: "Bilgi",
+            default: `${client.user?.displayName ?? "Bilgi"}`,
         },
         en: {
             success: "Success",
             error: "Error",
-            default: "Info",
+            default: `${client.user?.displayName ?? "Info"}`,
         },
     };
     let color;
