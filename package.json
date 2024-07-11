@@ -1,5 +1,5 @@
 {
-  "name": "discord-utils",
+  "name": "discord-utilize",
   "version": "1.0.0",
   "description": "A utility module for Discord.js applications, providing embed functions, error handling, and more.",
   "main": "./dist/index.js",
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/XRongo/discord-utils.git"
+    "url": "git+https://github.com/XRongo/discord-utilize.git"
   },
   "keywords": [
     "discord",
@@ -48,7 +48,7 @@
     "extensions"
   ],
   "bugs": {
-    "url": "https://github.com/XRongo/discord-utils/issues"
+    "url": "https://github.com/XRongo/discord-utilize/issues"
   },
-  "homepage": "https://github.com/XRongo/discord-utils#readme"
+  "homepage": "https://github.com/XRongo/discord-utilize#readme"
 }

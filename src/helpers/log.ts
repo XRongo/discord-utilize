@@ -2,7 +2,7 @@ import chalk from "chalk";
 
 export function info(message: string): void {
     console.info(
-        `[${chalk.cyanBright("Discord Utils")}] [${chalk.blue("INFO")}] ${chalk.blue(message)}`,
+        `[${chalk.cyanBright("Discord Utilize")}] [${chalk.blue("INFO")}] ${chalk.blue(message)}`,
     );
 }
 
@@ -17,7 +17,7 @@ export function warn(...message: unknown[]): void {
         .join(" ");
 
     console.log(
-        `[${chalk.cyanBright("Discord Utils")}] [${chalk.yellow("WARN")}] ${warnMessage}`,
+        `[${chalk.cyanBright("Discord Utilize")}] [${chalk.yellow("WARN")}] ${warnMessage}`,
     );
 }
 
@@ -32,12 +32,12 @@ export function error(...message: unknown[]): void {
         .join(" ");
 
     console.error(
-        `[${chalk.cyanBright("Discord Utils")}] [${chalk.red("ERROR")}] ${errorMessage}`,
+        `[${chalk.cyanBright("Discord Utilize")}] [${chalk.red("ERROR")}] ${errorMessage}`,
     );
 }
 
 export function success(message: string): void {
     console.log(
-        `[${chalk.cyanBright("Discord Utils")}] [${chalk.yellow("SUCCESS")}] ${chalk.green(message)}`,
+        `[${chalk.cyanBright("Discord Utilize")}] [${chalk.yellow("SUCCESS")}] ${chalk.green(message)}`,
     );
 }
