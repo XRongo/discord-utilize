@@ -1,6 +1,6 @@
 {
   "name": "discord-utilize",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A utility module for Discord.js applications, providing embed functions, error handling, and more.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
