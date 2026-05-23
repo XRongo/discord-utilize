@@ -1,4 +1,4 @@
-import { createCanvas, Image } from "canvas";
+import { createCanvas, Image } from "@napi-rs/canvas";
 import request from "sync-request";
 
 /**
